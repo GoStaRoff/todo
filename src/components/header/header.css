@@ -1,0 +1,28 @@
+.header {
+  background-color: rgb(55, 57, 58);
+  height: 3rem;
+  opacity: 70%;
+}
+
+.header:hover{
+    opacity: 100%;
+}
+
+.header-items {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.header-items li {
+  display: inline;
+  width: 10%;
+  background-color: aqua;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.header-items li:hover{
+    background-color: aqua;
+}

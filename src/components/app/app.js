@@ -4,8 +4,11 @@ import SearchPanel from "../search-panel/search-panel";
 import TodoList from "../todo-list/todo-list";
 import ItemStatusFilter from "../item-status-filter/item-status-filter";
 import AddItemForm from "../add-item/add-item-form";
+import Header from "../header/header";
+import Helmet from "react-helmet";
 
 import "./app.css";
+import HelmetExport from "react-helmet";
 
 let count = 4;
 
@@ -112,23 +115,41 @@ export default class App extends React.Component {
     const doneCount = todoData.filter((el) => el.done).length;
     const todoCount = todoData.length - doneCount;
     return (
-      <div className="todo-app">
-        <AppHeader toDo={todoCount} done={doneCount} />
-        <div className="top-panel d-flex">
-          <SearchPanel onSearchItem={(label) => this.onSearchItem(label)} />
-          <ItemStatusFilter
-            filter={filter}
-            onFilterChange={this.onFilterChange}
-          />
-        </div>
-
-        <TodoList
-          onToggleDone={this.onToggleDone}
-          onToggleImportant={this.onToggleImportant}
-          onDeleted={(id) => this.deleteItem(id)}
-          todos={this.filterItem(visibleItems, filter)}
+      <div>
+        <Helmet
+          htmlAttributes={{ lang: "en", amp: undefined }} // amp takes no value
+          title="Hello world!"
+          titleTemplate=""
+          defaultTitle="My Default Title"
+          base={{ target: "_blank", href: "http://mysite.com/" }}
+          meta={[
+            { name: "description", content: "Helmet application" },
+            { property: "og:type", content: "article" },
+          ]}
+          
         />
-        <AddItemForm onAdded={(label) => this.addItem(label)} />
+
+        <div>
+          <Header />
+          <div className="todo-app">
+            <AppHeader toDo={todoCount} done={doneCount} />
+            <div className="top-panel d-flex">
+              <SearchPanel onSearchItem={(label) => this.onSearchItem(label)} />
+              <ItemStatusFilter
+                filter={filter}
+                onFilterChange={this.onFilterChange}
+              />
+            </div>
+
+            <TodoList
+              onToggleDone={this.onToggleDone}
+              onToggleImportant={this.onToggleImportant}
+              onDeleted={(id) => this.deleteItem(id)}
+              todos={this.filterItem(visibleItems, filter)}
+            />
+            <AddItemForm onAdded={(label) => this.addItem(label)} />
+          </div>
+        </div>
       </div>
     );
   }
