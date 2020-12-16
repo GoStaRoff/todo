@@ -5,10 +5,10 @@ const Header = () => {
   return (
     <div className="header">
       <ul className="header-items">
-        <li>Home</li>
-        <li>Profile</li>
-        <li>TodoList</li>
-        <li>Options</li>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/list">TodoList</a></li>
+        <li><a href="/options">Options</a></li>
       </ul>
     </div>
   );

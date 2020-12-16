@@ -116,19 +116,6 @@ export default class App extends React.Component {
     const todoCount = todoData.length - doneCount;
     return (
       <div>
-        <Helmet
-          htmlAttributes={{ lang: "en", amp: undefined }} // amp takes no value
-          title="Hello world!"
-          titleTemplate=""
-          defaultTitle="My Default Title"
-          base={{ target: "_blank", href: "http://mysite.com/" }}
-          meta={[
-            { name: "description", content: "Helmet application" },
-            { property: "og:type", content: "article" },
-          ]}
-          
-        />
-
         <div>
           <Header />
           <div className="todo-app">

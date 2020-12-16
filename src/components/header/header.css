@@ -1,7 +1,7 @@
 .header {
   background-color: rgb(55, 57, 58);
-  height: 3rem;
-  opacity: 70%;
+  height: 50px;
+  opacity: 80%;
 }
 
 .header:hover{
@@ -15,14 +15,20 @@
 }
 
 .header-items li {
+  line-height: 50px;
   display: inline;
   width: 10%;
-  background-color: aqua;
   text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  border-radius: 10px;
 }
-
+.header-items li a{
+  display: block;
+  text-decoration: none;
+  color: white;
+  height: 100%;
+}
 .header-items li:hover{
-    background-color: aqua;
+    background-color: black;
 }
